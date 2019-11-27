@@ -1,0 +1,11 @@
+
+gui_magenta/dist/
+gui_magenta/e2e/
+gui_magenta/node_modules/
+api_magenta/.vs/
+api_magenta/api_magenta.Tests/bin/
+api_magenta/api_magenta.Tests/obj/
+api_magenta/api_magenta/Areas/HelpPage/
+api_magenta/api_magenta/bin/
+api_magenta/api_magenta/obj/
+api_magenta/packages/

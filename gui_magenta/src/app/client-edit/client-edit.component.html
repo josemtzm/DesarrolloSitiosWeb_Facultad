@@ -1,0 +1,40 @@
+<mat-card>
+    <form #clientForm="ngForm" (ngSubmit)="save(clientForm.value)">
+      <mat-card-header>
+        <mat-card-title>
+          <h2>{{client.FirstName ? 'Edit' : 'Add'}} Client</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <input type="hidden" name="ID" [(ngModel)]="client.ID">
+        <mat-form-field>
+          <input matInput placeholder="Nombre Cliente" [(ngModel)]="client.FirstName" required name="FirstName">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apellido Cliente" [(ngModel)]="client.LastName" required name="LastName">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Email Cliente" [(ngModel)]="client.Email" required name="Email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Telefono Cliente" [(ngModel)]="client.Phone" required name="Phone">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Mensaje Cliente" [(ngModel)]="client.Message" required name="Message">
+          </mat-form-field>
+          <mat-error>
+            Requerido
+          </mat-error>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!clientForm.form.valid">Save
+        </button>
+        <!-- <button mat-raised-button color="secondary" (click)="remove(client.id)" *ngIf="client.ID" type="button">Borrar
+        </button> -->
+        <a mat-button routerLink="/client-list">Cancel</a>
+      </mat-card-actions>
+      <mat-card-footer>
+  
+      </mat-card-footer>
+    </form>
+  </mat-card>

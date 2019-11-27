@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>Magenta</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button routerLink="/"> Home </a>
+      <a mat-button routerLink="/login"> Login </a>
+      <a mat-button routerLink="/register"> Registrar </a>
+      <a mat-button routerLink="/historia"> Historia </a>
+      <a mat-button routerLink="/acerca-de"> Acerca de </a>
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/accounts"> Accounts </a>
+      <a mat-list-item routerLink="/login"> Login </a>
+      <a mat-list-item routerLink="/register"> Registrar </a>
+      <a mat-list-item routerLink="/historia"> Historia </a>
+      <a mat-list-item routerLink="/acerca-de"> Acerca de </a>
+      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+    <!-- main content container -->
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-8 offset-sm-2">
+                  <router-outlet></router-outlet>
+              </div>
+          </div>
+      </div>
+    </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -7,7 +7,8 @@ import { MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatToo
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatRadioModule, } from '@angular/material';
+  MatRadioModule,
+  MatTableModule, } from '@angular/material';
   import { FormsModule } from '@angular/forms';
   import { HttpClientModule } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,9 +16,15 @@ import { AppComponent } from './app.component';
 import { HistoriaComponent } from './historia';
 import { RegisterComponent } from './register';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientEditComponent } from './client-edit/client-edit.component';
 import { ClientService } from './shared/api/client.service';
+
+import { CartComponent  } from './cart/cart.component';
+import { ProductComponent } from './product/product.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,10 @@ import { ClientService } from './shared/api/client.service';
         HistoriaComponent,
         RegisterComponent,
         ClientListComponent,
-        ClientEditComponent
+        ClientEditComponent,
+
+        CartComponent,
+        ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +57,8 @@ import { ClientService } from './shared/api/client.service';
     MatInputModule,
     MatRadioModule,
     MatListModule,
+    MatTableModule,
+    FlexLayoutModule
   ],
   exports: [
     MatNativeDateModule,
@@ -61,7 +73,10 @@ import { ClientService } from './shared/api/client.service';
     MatInputModule,
     MatListModule,
     MatRadioModule,],
-  providers: [ClientService],
+  providers: [
+    ClientService,
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
